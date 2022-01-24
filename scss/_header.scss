@@ -16,9 +16,15 @@
 
         > span {
             display: block;
-            width: 26px;
-            height: 2px;
-            background-color: $darkBlue;
+            width: 40px;
+            height: 7px;
+            margin: 2px 0px;
+            background-color: $maximum-red-purple;
+            align-self: flex-end;
+
+            &:not(:last-child){
+                margin-bottom: 3px;
+            }
         }
     }
 }
