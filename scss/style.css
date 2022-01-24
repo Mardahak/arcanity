@@ -69,9 +69,15 @@ body {
           justify-content: center;
 }
 
-.flex-ac-c {
+.flex-ai-c {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.header__menu > span {
+  display: block;
+  width: 26px;
+  height: 2px;
 }
 /*# sourceMappingURL=style.css.map */
