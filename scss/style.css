@@ -21,7 +21,6 @@ body {
 
 .container {
   max-width: 980px;
-  height: 90%;
   background-color: #333;
   padding: 1em 1em;
   margin: 0 auto;
@@ -47,13 +46,18 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  background-color: #FFFFFF;
+}
+
+#prompt {
+  padding: 0px 1em;
 }
 
 .btn {
   border: 2px solid magenta;
   padding: .5rem .75rem;
   color: black;
-  margin: .15rem;
+  margin: 9rem;
   min-width: 100%;
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -66,6 +70,39 @@ body {
 
 .btn-orange {
   background-color: #d47a12;
+}
+
+.btn-grayishBlue {
+  background-color: #9698a6;
+}
+
+a.button {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0em 0em;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  background-color: #af9e6d;
+  border: 1px solid black;
+}
+
+a.button:hover {
+  border-color: white;
+}
+
+@media all and (max-width: 30em) {
+  a.button {
+    display: block;
+    margin: 0.2em auto;
+  }
 }
 
 .flex {
@@ -94,6 +131,11 @@ body {
 
 .header nav {
   padding: 24px;
+}
+
+.header__logo img {
+  min-height: 100px;
+  min-width: 100px;
 }
 
 .header__menu > span {
