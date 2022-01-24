@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Lora:wght@500&display=swap" rel="stylesheet">
     <link href="scss\style.css" rel="stylesheet">
-
     <script defer src="/js/game.js"></script>
     <title>Arcanity</title>
 </head>
 <body>
     <header>
-        <nav class="flex">
+        <nav class="flex flex-jc-sb flex-ai-c">
+            <a href="/" class="header__logo">
+                <img src="images/software-engineer.svg" alt="arcanity">
+            </a>
 
-
-
+            <a href="#" class="header__menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
 
         </nav>
     </header>
 
     <div class="container">
-        <div class="columns" id="text">Text</div>
-        <div class="columns" id="option-buttons">
-            <button class="btn row">Option 1</button>
-            <button class="btn row">Option 2</button>
-            <button class="btn row">Option 3</button>
-            <button class="btn row">Option 4</button>
+        <div class="flex columns" id="text">
+            <h2>What is your profession?</h2>
+        </div>
+        <div class="flex columns" id="option-buttons">
+            <a href="#" class="btn btn-teal col-1">Blacksmith</a>
+            <a href="#" class="btn btn-orange col-2">Hunter</a>
+            <a href="#" class="btn btn-teal col-3">Cleric</a>
+            <a href="#" class="btn btn-orange col-4">Scholar</a>
         </div>
         </div>
     </body>

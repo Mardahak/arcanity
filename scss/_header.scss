@@ -1,5 +1,9 @@
 .header {
 
+    nav {
+        padding: 24px;
+    }
+    
     &__logo {
         img {
 
@@ -13,7 +17,7 @@
             display: block;
             width: 26px;
             height: 2px;
-            
+            background-color: $darkBlue;
         }
     }
 }
