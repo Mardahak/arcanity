@@ -1,0 +1,24 @@
+{
+  "name": "arcanity",
+  "version": "1.0.0",
+  "description": "text-based adventure game",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "arcanity-game"
+  },
+  "keywords": [
+    "game",
+    "adventure"
+  ],
+  "author": "Mardahak",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "sass": "^1.49.0"
+  }
+}
