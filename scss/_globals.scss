@@ -16,7 +16,7 @@ body {
     font-size: $font-med;
     line-height: 1.3;
 }
-
+// prompt & option-buttons
 .container {
     max-width: 980px;
     background-color: #333;
@@ -25,14 +25,13 @@ body {
     border-radius: 5px;
     // border: 10px solid green;
     box-shadow: 0 0 10px 2px;
-    flex-direction: column;
-    align-items: left;
+    //flex-direction: column;
+    align-items: flex-start;
 }
 
 .columns {
     border: 1px solid $steel-pink;
     flex-direction: column;
-    flex: 1;
     //background-color: #333;
     color: white;
     align-content: flex-start;
@@ -91,9 +90,50 @@ a, a:visited, a:hover {
 .btn {
     padding: 1rem 1.875rem;
     background: linear-gradient(to right, $electric-violet, hsla(270, 100%, 67%, 1));
-    border: 0;
+    border: 1px solid transparent;
     border-radius: 50px;
     cursor: button;
     font-weight: 400;
     color: white;
+}
+
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(medium) {
+        display: none;
+    }
+}
+
+
+
+// Media Queries
+
+// @media all and (min-width: 601px) {
+//     body {
+//         a.header__menu {
+//             display: none;
+//         }
+//     }
+// }
+
+
+    @include breakpoint-down(medium) {
+        body {
+            a.button {
+                //margin: .5em 0em;
+                padding: 1em;
+                    &:not(:last-child){
+                        margin-bottom: .75em;
+            }
+    }
+// Mobile display
+    // @media all and (max-width: 600px) {
+
+    // }
+    }
 }

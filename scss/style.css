@@ -27,13 +27,9 @@ body {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px 2px;
           box-shadow: 0 0 10px 2px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .columns {
@@ -42,9 +38,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   color: white;
   -ms-flex-line-pack: start;
       align-content: flex-start;
@@ -115,11 +108,32 @@ a, a:visited, a:hover {
   padding: 1rem 1.875rem;
   background: -webkit-gradient(linear, left top, right top, from(#9124ff), to(#ab57ff));
   background: linear-gradient(to right, #9124ff, #ab57ff);
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 50px;
   cursor: button;
   font-weight: 400;
   color: white;
+}
+
+@media (max-width: 639px) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 639px) {
+  body a.button {
+    padding: 1em;
+  }
+  body a.button:not(:last-child) {
+    margin-bottom: .75em;
+  }
 }
 
 .header nav {
@@ -145,9 +159,12 @@ a, a:visited, a:hover {
 
 .header__links > a {
   font-weight: 500;
-  padding-right: 10px;
   color: #9124ff;
   font-size: 1.125rem;
+}
+
+.header__links > a:not(:last-child) {
+  margin-right: 15px;
 }
 
 .header__links a:hover {
@@ -159,9 +176,18 @@ a, a:visited, a:hover {
 .header__login {
   font-size: 1.125rem;
   color: white;
+  padding: 1rem 1.875rem;
+  background: -webkit-gradient(linear, left top, right top, from(#9124ff), to(#ab57ff));
+  background: linear-gradient(to right, #9124ff, #ab57ff);
+  border: 1px solid transparent;
+  border-radius: 50px;
+  cursor: button;
+  font-weight: 400;
 }
 
-.header__login :hover {
-  background-color: #ff0fbf;
+.header a.header__login:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#9124ff), to(#ff0fbf));
+  background: linear-gradient(to right, #9124ff, #ff0fbf);
+  border: 1px solid white;
 }
 /*# sourceMappingURL=style.css.map */

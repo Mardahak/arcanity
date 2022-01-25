@@ -30,10 +30,12 @@
     &__links {
         > a {
             font-weight: 500;
-            padding-right: 10px;
             color: $electric-violet;
             font-size: $font-med;
+            &:not(:last-child){
+                margin-right: 15px;
             }
+        }
         a:hover {
             color: $steel-pink;
             transition: color 0.25s ease-in;
@@ -42,8 +44,15 @@
     &__login {
         font-size: $font-med;
         color: white;
-        :hover {
-            background-color: $shocking-pink;
-        }
+        padding: 1rem 1.875rem;
+        background: linear-gradient(to right, $electric-violet, hsla(270, 100%, 67%, 1));
+        border: 1px solid transparent;
+        border-radius: 50px;
+        cursor: button;
+        font-weight: 400;
     }
+    a.header__login:hover {
+        background: linear-gradient(to right, $electric-violet, $shocking-pink);
+        border: 1px solid white;
     }
+}
