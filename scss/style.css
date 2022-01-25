@@ -31,9 +31,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
 }
 
 .columns {
@@ -45,8 +45,9 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #333;
   color: white;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
 }
 
 #prompt {
@@ -66,7 +67,8 @@ a.button {
   text-align: left;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  background-color: #a5317c;
+  background: -webkit-gradient(linear, left top, right top, from(#a5317c), to(#9124ff));
+  background: linear-gradient(0.25turn, #a5317c, #9124ff);
   border: 1px solid black;
 }
 
@@ -109,6 +111,17 @@ a, a:visited, a:hover {
           align-items: center;
 }
 
+.btn {
+  padding: 1rem 1.875rem;
+  background: -webkit-gradient(linear, left top, right top, from(#9124ff), to(#ab57ff));
+  background: linear-gradient(to right, #9124ff, #ab57ff);
+  border: 0;
+  border-radius: 50px;
+  cursor: button;
+  font-weight: 400;
+  color: white;
+}
+
 .header nav {
   padding: 24px;
 }
@@ -123,12 +136,32 @@ a, a:visited, a:hover {
   width: 40px;
   height: 7px;
   margin: 2px 0px;
-  background-color: #a5317c;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  background: radial-gradient(#1780e8, #a5317c);
 }
 
 .header__menu > span:not(:last-child) {
   margin-bottom: 3px;
+}
+
+.header__links > a {
+  font-weight: 500;
+  padding-right: 10px;
+  color: #9124ff;
+  font-size: 1.125rem;
+}
+
+.header__links a:hover {
+  color: #d93acf;
+  -webkit-transition: color 0.25s ease-in;
+  transition: color 0.25s ease-in;
+}
+
+.header__login {
+  font-size: 1.125rem;
+  color: white;
+}
+
+.header__login :hover {
+  background-color: #ff0fbf;
 }
 /*# sourceMappingURL=style.css.map */

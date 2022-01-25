@@ -19,12 +19,31 @@
             width: 40px;
             height: 7px;
             margin: 2px 0px;
-            background-color: $maximum-red-purple;
-            align-self: flex-end;
+            background: radial-gradient($azure, $maximum-red-purple);
 
             &:not(:last-child){
                 margin-bottom: 3px;
             }
         }
     }
-}
+
+    &__links {
+        > a {
+            font-weight: 500;
+            padding-right: 10px;
+            color: $electric-violet;
+            font-size: $font-med;
+            }
+        a:hover {
+            color: $steel-pink;
+            transition: color 0.25s ease-in;
+            }
+        }
+    &__login {
+        font-size: $font-med;
+        color: white;
+        :hover {
+            background-color: $shocking-pink;
+        }
+    }
+    }
