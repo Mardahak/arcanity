@@ -26,9 +26,6 @@ body {
   margin: 0rem;
   -webkit-box-shadow: 0 0 10px 2px;
           box-shadow: 0 0 10px 2px;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .columns {
@@ -37,8 +34,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   color: white;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
 }
 
 #prompt {
@@ -46,7 +41,9 @@ body {
 }
 
 a.button {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: 0.3em 1.2em;
   margin: 0em 0em;
   border: 0.16em solid rgba(255, 255, 255, 0);
@@ -138,6 +135,17 @@ a, a:visited, a:hover {
   }
 }
 
+@media (max-width: 469px) {
+  body {
+    background-color: #1780e8;
+  }
+  body #option-buttons {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+}
+
 .header nav {
   padding: 24px;
 }
@@ -179,6 +187,7 @@ a, a:visited, a:hover {
   font-size: 1.125rem;
   color: white;
   padding: 1rem 1.875rem;
+  margin-right: 25px;
   background: -webkit-gradient(linear, left top, right top, from(#9124ff), to(#ab57ff));
   background: linear-gradient(to right, #9124ff, #ab57ff);
   border: 1px solid transparent;
