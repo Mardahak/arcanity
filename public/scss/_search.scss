@@ -1,0 +1,41 @@
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    margin: .75rem .75rem;
+    color: white;
+
+}
+
+input {
+    font-size: 1rem;
+    margin-top: .5rem;
+    @include breakpoint-down(medium) {
+        max-width: 100%
+    }
+    @include breakpoint-up(medium) {
+        max-width: 25%;
+    }
+}
+
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: .25rem;
+    margin: .75rem .75rem;
+}
+
+.card {
+    border: 1px solid black;
+    padding: .5rem;
+    color: white;
+}
+
+.card > .header {
+    margin-bottom: .25rem;
+}
+
+.card > .body {
+    font-size: .8rem;
+    color: #777;
+}

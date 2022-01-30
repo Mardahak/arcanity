@@ -20,11 +20,10 @@ body {
 }
 
 .container {
-  max-width: 980px;
+  max-width: 100%;
   background-color: #333;
-  padding: 1em 1em;
-  margin: 0 auto;
-  border-radius: 5px;
+  padding: .75rem .75rem;
+  margin: 0rem;
   -webkit-box-shadow: 0 0 10px 2px;
           box-shadow: 0 0 10px 2px;
   -webkit-box-align: start;
@@ -33,7 +32,6 @@ body {
 }
 
 .columns {
-  border: 1px solid #d93acf;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -127,6 +125,10 @@ a, a:visited, a:hover {
   }
 }
 
+.hide {
+  display: none;
+}
+
 @media (max-width: 639px) {
   body a.button {
     padding: 1em;
@@ -189,5 +191,63 @@ a, a:visited, a:hover {
   background: -webkit-gradient(linear, left top, right top, from(#9124ff), to(#ff0fbf));
   background: linear-gradient(to right, #9124ff, #ff0fbf);
   border: 1px solid white;
+}
+
+.search-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .25rem;
+  margin: .75rem .75rem;
+  color: white;
+}
+
+input {
+  font-size: 1rem;
+  margin-top: .5rem;
+}
+
+@media (max-width: 639px) {
+  input {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  input {
+    max-width: 25%;
+  }
+}
+
+.user-cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: .25rem;
+  margin: .75rem .75rem;
+}
+
+.card {
+  border: 1px solid black;
+  padding: .5rem;
+  color: white;
+}
+
+.card > .header {
+  margin-bottom: .25rem;
+}
+
+.card > .body {
+  font-size: .8rem;
+  color: #777;
+}
+
+.card {
+  border: 1px;
 }
 /*# sourceMappingURL=style.css.map */
