@@ -1,9 +1,12 @@
 {
+  "homepage": "https://mardahak.github.io/arcanity-game",
   "name": "arcanity",
   "version": "1.0.0",
   "description": "text-based adventure game",
   "main": "server.js",
   "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "start": "node server.js",
     "devStart": "nodemon server.js"
   },
@@ -24,6 +27,7 @@
     "mongoose": "^6.1.8"
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "nodemon": "^2.0.15",
     "sass": "^1.49.0"
   }
