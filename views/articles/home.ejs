@@ -1,0 +1,36 @@
+
+    <div class="container">
+        <div class="flex columns" id="prompt">
+            <h2>What is your profession?</h2>
+        </div>
+        <div class="flex columns" id="option-buttons">
+            <a href="#" class="button col-1">Corpo</a>
+            <a href="#" class="button col-2">Netrunner</a>
+            <a href="#" class="button col-3">Solo</a>
+            <a href="#" class="button col-4">Rockerboy</a>
+            <a href="#" class="button col-5">Law</a>
+        </div>
+    </div>
+
+    <!-- Blog Postings -->
+    <div class="container">
+        <h1 class="article-header">Blog Articles</h1>
+        <a href="/articles/new" class="button new-article-button">New Article</a>
+    
+        <% articles.forEach(article => { %>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title"><%= article.title %></h4>
+              <div class="card-subtitle">
+                <%= article.createdAt.toLocaleDateString() %>
+              </div>
+              <div class="card-text"><%= article.description %></div>
+              <a href="articles/<%= article.slug %>" class="button">Read More</a>
+              <a href="articles/edit/<%= article.id %>" class="button">Edit</a>
+              <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                <button type="submit" class="button">Delete</button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      </div>
