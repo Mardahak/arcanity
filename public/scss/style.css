@@ -1,3 +1,77 @@
+.has-fade {
+  visibility: hidden;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fade-in 200ms ease-in-out forwards;
+          animation: fade-in 200ms ease-in-out forwards;
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  -webkit-animation: fade-out 200ms ease-in-out forwards;
+          animation: fade-out 200ms ease-in-out forwards;
+}
+
 html, body {
   font-size: 100%;
   -webkit-box-sizing: border-box;
@@ -19,7 +93,7 @@ body {
   line-height: 1.3;
 }
 
-div.container {
+div.prompt-container {
   max-width: 100%;
   background-color: #333;
   padding: .75rem .75rem;
@@ -43,10 +117,6 @@ div.columns {
   width: auto;
 }
 
-#prompt {
-  padding: 0px 1em;
-}
-
 a.button {
   padding: 0.3em 1.2em;
   margin: 0em 0em;
@@ -68,10 +138,15 @@ a.button:hover {
   border-color: white;
 }
 
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 @media all and (max-width: 30em) {
   a.button {
     display: block;
-    margin: 0.2em auto;
+    margin: 0.2em 0px;
   }
 }
 
@@ -146,6 +221,9 @@ a, a:visited, a:hover {
 }
 
 @media (max-width: 469px) {
+  html {
+    scrollbar-width: none;
+  }
   html ::-webkit-scrollbar {
     display: none;
   }
@@ -154,8 +232,34 @@ a, a:visited, a:hover {
   }
 }
 
+.header.open .header__toggle > span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header.open .header__toggle > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .header__toggle > span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header .overlay {
+  visibility: hidden;
+  position: fixed;
+  top: 10.55rem;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0.7)), to(transparent));
+  background-image: linear-gradient(rgba(13, 13, 13, 0.7), transparent);
+}
+
 .header nav {
-  padding: 24px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .header__logo img {
@@ -163,16 +267,45 @@ a, a:visited, a:hover {
   min-width: 100px;
 }
 
-.header__menu > span {
+.header__toggle > span {
   display: block;
   width: 40px;
-  height: 7px;
+  height: 6px;
   margin: 2px 0px;
   background: radial-gradient(#1780e8, #a5317c);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-transform-origin: 5px 3px;
+          transform-origin: 5px 3px;
 }
 
-.header__menu > span:not(:last-child) {
-  margin-bottom: 3px;
+.header__toggle > span:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.header__menu {
+  position: absolute;
+  width: calc(100% - 1.5rem);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #333;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 23px;
+}
+
+.header__menu a {
+  display: block;
+  color: #9124ff;
+  padding: 0.625rem;
+  text-align: center;
+}
+
+@media (max-width: 469px) {
+  .header .header__menu {
+    width: calc(100% - 1.28rem);
+  }
 }
 
 .header__links > a {
@@ -193,7 +326,7 @@ a, a:visited, a:hover {
 
 .header__links__disabled {
   cursor: not-allowed;
-  pointer-events: all !important;
+  pointer-events: all;
   color: gray;
 }
 

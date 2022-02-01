@@ -4,6 +4,7 @@ html, body {
     height: 100%;
 }
 
+//No clue what this does
 *, *::before, *::after {
     box-sizing: inherit;
 }
@@ -17,7 +18,7 @@ body {
     line-height: 1.3;
 }
 // Prompt & option-buttons
-div.container {
+div.prompt-container {
     max-width: 100%;
     background-color: #333;
     padding: .75rem .75rem;
@@ -34,10 +35,8 @@ div.columns {
     color: white;
     width: auto;
 }
-#prompt {
-    padding: 0px 1em;
-}
 
+// <a> styling
 a.button {
      padding:0.3em 1.2em;
      margin: 0em 0em;
@@ -57,10 +56,15 @@ a.button:hover{
     border-color: rgba(255,255,255,1);
 }
 
+.container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 @media all and (max-width:30em){
     a.button{
     display:block;
-    margin:0.2em auto;
+    margin:0.2em 0px;
     }
 }
 
@@ -115,22 +119,10 @@ a, a:visited, a:hover {
     display: none;
 }
 
-
-// Media Queries
-
-// @media all and (min-width: 601px) {
-//     body {
-//         a.header__menu {
-//             display: none;
-//         }
-//     }
-// }
-
-
+//Breakpoints
 @include breakpoint-down(medium) {
     body {
         a.button {
-            //margin: .5em 0em;
             padding: 1em;
                 &:not(:last-child){
                     margin-bottom: .75em;
@@ -142,7 +134,8 @@ a, a:visited, a:hover {
 //No scroll bars for small screens on browsers that support webkit. Fixed button display on small screens w/ block display
 @include breakpoint-down(small) {
     html {
-        ::-webkit-scrollbar{
+        scrollbar-width: none;
+        ::-webkit-scrollbar {
             display: none;
         }
         body {
