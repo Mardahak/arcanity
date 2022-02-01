@@ -17,29 +17,28 @@ body {
     line-height: 1.3;
 }
 // Prompt & option-buttons
-.container {
+div.container {
     max-width: 100%;
     background-color: #333;
     padding: .75rem .75rem;
     margin: 0rem;
     //border-radius: 5px;
-    // border: 10px solid green;
+    //border: 10px solid green;
     box-shadow: 0 0 10px 2px;
-    //flex-direction: column;
 }
 
-.columns {
-    //border: 1px solid $steel-pink;
+div.columns {
+    display: flex;
+    flex: 0;
     flex-direction: column;
-    //background-color: #333;
     color: white;
+    width: auto;
 }
 #prompt {
     padding: 0px 1em;
 }
 
 a.button {
-     display: inline-flex;
      padding:0.3em 1.2em;
      margin: 0em 0em;
      border:0.16em solid rgba(255,255,255,0);
@@ -53,16 +52,17 @@ a.button {
      //background-color: $maximum-red-purple;
      background: linear-gradient(0.25turn, $maximum-red-purple, $electric-violet);
      border: 1px solid black;
+}
+a.button:hover{
+    border-color: rgba(255,255,255,1);
+}
+
+@media all and (max-width:30em){
+    a.button{
+    display:block;
+    margin:0.2em auto;
     }
-    a.button:hover{
-     border-color: rgba(255,255,255,1);
-    }
-    @media all and (max-width:30em){
-     a.button{
-      display:block;
-      margin:0.2em auto;
-     }
-    }
+}
 
 a, a:visited, a:hover {
     text-decoration: none;
@@ -81,6 +81,9 @@ a, a:visited, a:hover {
     }
     &-ai-c {
         align-items: center;
+    }
+    &-ai-fs {
+        align-items: flex-start;
     }
 }
 
@@ -136,13 +139,16 @@ a, a:visited, a:hover {
     }
 }
 
-//width of 458px doesn't display azure & boxes are center-aligned 
+//No scroll bars for small screens on browsers that support webkit. Fixed button display on small screens w/ block display
 @include breakpoint-down(small) {
-    body {
-        background-color: $azure;
-        #option-buttons {
-            display: inline-flex;
-            //align-items: flex-start;
+    html {
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        body {
+            div.columns {
+                display: block;
+            }
         }
     }
 }

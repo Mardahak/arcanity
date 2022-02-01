@@ -19,7 +19,7 @@ body {
   line-height: 1.3;
 }
 
-.container {
+div.container {
   max-width: 100%;
   background-color: #333;
   padding: .75rem .75rem;
@@ -28,12 +28,19 @@ body {
           box-shadow: 0 0 10px 2px;
 }
 
-.columns {
+div.columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   color: white;
+  width: auto;
 }
 
 #prompt {
@@ -41,9 +48,6 @@ body {
 }
 
 a.button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   padding: 0.3em 1.2em;
   margin: 0em 0em;
   border: 0.16em solid rgba(255, 255, 255, 0);
@@ -99,6 +103,12 @@ a, a:visited, a:hover {
           align-items: center;
 }
 
+.flex-ai-fs {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .btn {
   padding: 1rem 1.875rem;
   background: -webkit-gradient(linear, left top, right top, from(#9124ff), to(#ab57ff));
@@ -136,13 +146,11 @@ a, a:visited, a:hover {
 }
 
 @media (max-width: 469px) {
-  body {
-    background-color: #1780e8;
+  html ::-webkit-scrollbar {
+    display: none;
   }
-  body #option-buttons {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
+  html body div.columns {
+    display: block;
   }
 }
 
@@ -181,6 +189,12 @@ a, a:visited, a:hover {
   color: #d93acf;
   -webkit-transition: color 0.25s ease-in;
   transition: color 0.25s ease-in;
+}
+
+.header__links__disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+  color: gray;
 }
 
 .header__login {

@@ -40,7 +40,13 @@
             color: $steel-pink;
             transition: color 0.25s ease-in;
             }
+        &__disabled {
+            cursor: not-allowed;
+            pointer-events: all !important;
+            color: gray;
+            }
         }
+
     &__login {
         font-size: $font-med;
         color: white;
